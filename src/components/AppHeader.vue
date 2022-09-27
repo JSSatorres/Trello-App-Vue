@@ -1,7 +1,7 @@
 <template>
     <header>
-        <span class="title" > Vue Trello</span>
-        <router-link class="btn-header" to="/"></router-link>
+        <span class="title">Vue Trello</span>
+    <router-link class="btn-header" to="/">My Boards</router-link>
     </header>
 </template>
 
