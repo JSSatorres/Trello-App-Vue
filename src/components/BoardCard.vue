@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .board-card {
   background-color: #546e7a;
   box-shadow: 0 0 0 0.5px rgba(49, 49, 93, 0.03),
@@ -29,18 +29,12 @@ export default {
   transition: all 600ms ease;
   width: 100%;
   height: 100px;
-  &-title {
-    font-size: 1.2rem;
-  }
-  &:hover {
-    background-color: #90a4ae;
-    font-weight: bold;
-  }
-  @media screen and (min-width: 600px) {
-    width: 33%;
-  }
-  @media screen and (min-width: 1024px) {
-    width: 250px;
-  }
+}
+.board-card-title {
+  font-size: 1.2rem;
+}
+.board-card-title:hover {
+  background-color: #90a4ae;
+  font-weight: bold;
 }
 </style>

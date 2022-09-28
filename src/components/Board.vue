@@ -57,14 +57,14 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 h3 {
   color: #37474f;
   text-align: left;
   margin: 1.5rem;
-  span {
-    color: #546e7a;
-  }
+}
+h3 span {
+  color: #546e7a;
 }
 section {
   text-align: left;
@@ -89,12 +89,12 @@ input {
   outline: 0;
   padding: 1rem;
   transition: all 600ms ease;
-  &:active,
-  &:focus {
-    background-color: #fafafa;
-  }
-  &::placeholder {
-    color: #fafafa;
-  }
+}
+input:active,
+input:focus {
+  background-color: #fafafa;
+}
+input::placeholder {
+  color: #fafafa;
 }
 </style>
