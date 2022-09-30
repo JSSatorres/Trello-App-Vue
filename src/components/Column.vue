@@ -3,36 +3,36 @@
     <header>
       <h3>{{ name }}</h3>
     </header>
-    <task-list :listId="listId" :tasks="tasksList"> </task-list>
+    <!--  <task-list :listId="listId" :tasks="tasksList"> </task-list> -->
   </section>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
-import TaskList from '@/components/TaskList'
+// import { mapGetters, mapActions } from 'vuex'
+// import TaskList from '@/components/TaskList'
 export default {
   name: 'column',
-  components: { TaskList },
+  // components: { TaskList },
   props: {
     listId: String,
     name: String
-  },
-  computed: {
-    ...mapGetters(['getTasksFromList']),
-    tasksList() {
-      return this.getTasksFromList(this.listId)
-    }
-  },
-  methods: {
-    ...mapActions(['fetchTasks'])
-  },
-  created() {
-    this.fetchTasks({ list: this.listId })
   }
+  // computed: {
+  //   ...mapGetters(['getTasksFromList']),
+  //   tasksList() {
+  //     return this.getTasksFromList(this.listId)
+  //   }
+  // },
+  // methods: {
+  //   ...mapActions(['fetchTasks'])
+  // },
+  // created() {
+  //   this.fetchTasks({ list: this.listId })
+  // }
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 section {
   box-sizing: border-box;
   background-color: #eceff1;
@@ -42,6 +42,7 @@ section {
   margin: 1rem;
   padding: 1rem;
   width: 100%;
+
   @media screen and (min-width: 600px) {
     width: calc(50% - 2rem - 2px);
   }

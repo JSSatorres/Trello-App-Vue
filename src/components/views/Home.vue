@@ -32,7 +32,7 @@ export default {
           name: 'tareas'
         },
         {
-          id: 1,
+          id: 2,
           name: 'lista de la compra'
         }
       ]
