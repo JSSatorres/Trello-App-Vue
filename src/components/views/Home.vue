@@ -8,6 +8,13 @@
         v-model="boardName"
         @keyup.enter="add()"
       />
+      <!-- doble unout -->
+      <input
+        type="text"
+        placeholder="Añade un nuevo panlel"
+        v-model="boardName"
+        @keyup.enter="add()"
+      />
       <board-card
         v-for="board in boards"
         :key="board.id"
