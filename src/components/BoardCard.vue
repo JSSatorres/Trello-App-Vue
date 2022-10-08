@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'board-card',
+  name: 'BoardCard',
   props: {
     id: String,
     name: String

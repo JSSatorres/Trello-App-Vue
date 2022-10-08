@@ -1,42 +1,53 @@
 <template>
   <section>
     <h3><span>My Boards</span> ▸ {{ name }}</h3>
+    <!-- v-model="listName" -->
     <input
       type="text"
       placeholder="Add a list..."
       v-model="listName"
       @keyup.enter="add()"
     />
-    <template v-if="fetchingData">
+    <!-- <template v-if="fetchingData">
       <span>Loading...</span>
-    </template>
+    </template> -->
     <div class="container">
-      <column
+      <ColumnList
         v-for="(list, index) in boardLists"
         :key="index"
         :listId="list.id"
         :name="list.name"
-      >
-      </column>
+      ></ColumnList>
     </div>
   </section>
 </template>
 
 <script>
 /* import { mapState, mapGetters, mapActions } from 'vuex' */
-import Column from './Column'
+
+import ColumnList from '../components/ColumnList.vue'
+
 export default {
   name: 'board',
-  components: { Column },
+  components: { ColumnList },
   props: {
     name: String,
     id: String
-  }
+  },
   // data() {
   //   return {
   //     listName: ''
   //   }
   // },
+  data() {
+    return {
+      listName: '',
+      boardLists: [
+        { id: '1', name: 'Todo' },
+        { id: '2', name: 'Doing' }
+      ]
+    }
+  },
   // computed: {
   //   ...mapState(['fetchingData', 'error']),
   //   ...mapGetters(['getListsByBoard']),
@@ -44,13 +55,15 @@ export default {
   //     return this.getListsByBoard(this.id)
   //   }
   // },
-  // methods: {
-  //   ...mapActions(['addColumn', 'fetchLists']),
-  //   add() {
-  //     this.addColumn({ board: this.id, name: this.listName })
-  //     this.listName = ''
-  //   }
-  // },
+  methods: {
+    //   ...mapActions(['addColumn', 'fetchLists']),
+    add() {
+      // this.addColumn({ board: this.id, name: this.listName })
+      // this.listName = ''
+      this.boardLists.push({ name: this.listName })
+      this.listName = ''
+    }
+  }
   // created() {
   //   this.fetchLists({ board: this.id })
   // }

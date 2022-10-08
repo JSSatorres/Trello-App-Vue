@@ -3,20 +3,30 @@
     <header>
       <h3>{{ name }}</h3>
     </header>
-    <!--  <task-list :listId="listId" :tasks="tasksList"> </task-list> -->
+    <TaskList :listId="listId" :tasks="tasksList" />
   </section>
 </template>
 
 <script>
 // import { mapGetters, mapActions } from 'vuex'
-// import TaskList from '@/components/TaskList'
+import TaskList from '@/components/TaskList'
 export default {
-  name: 'column',
-  // components: { TaskList },
+  name: 'ColumnList',
+  components: { TaskList },
   props: {
     listId: String,
     name: String
+  },
+  data() {
+    return {
+      tasksList: [
+        { id: '1', title: 'cagar' },
+        { id: '2', title: 'saltar' },
+        { id: '3', title: 'matar' }
+      ]
+    }
   }
+
   // computed: {
   //   ...mapGetters(['getTasksFromList']),
   //   tasksList() {
