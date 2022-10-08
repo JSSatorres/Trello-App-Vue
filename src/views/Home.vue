@@ -4,7 +4,7 @@
     <div class="boards-collections">
       <input
         type="text"
-        placeholder="Añade un nuevo panlel"
+        placeholder="Add new panel"
         v-model="boardName"
         @keyup.enter="add()"
       />

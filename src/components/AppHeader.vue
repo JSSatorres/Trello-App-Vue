@@ -26,4 +26,13 @@ header {
   font-size: 20px;
   text-align: center;
 }
+a {
+  margin: 0px 0 0 12px;
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(42, 167, 48);
+}
+a:hover {
+  color: rgb(214, 169, 22);
+}
 </style>
