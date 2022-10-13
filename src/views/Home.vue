@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h3>Mis paneles</h3>
+  <div class="containerHome">
+    <h3>My panels</h3>
     <div class="boards-collections">
       <input
         type="text"
@@ -9,43 +9,51 @@
         @keyup.enter="add()"
       />
       <BoardCard
-        v-for="board in boards"
-        :key="board.id"
-        :name="board.name"
-        :id="board.id"
+        v-for="(board, index) in getBoard"
+        :key="index"
+        :position="index"
+        :name="board"
+        @handelDeleteBoard="deleteBoard"
       />
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapMutations, mapActions } from 'vuex'
 import BoardCard from '@/components/BoardCard.vue'
+
 export default {
   name: 'home-view',
   components: { BoardCard },
   data() {
     return {
-      boardName: '',
-      boards: [
-        {
-          id: '1',
-          name: 'tareas'
-        },
-        {
-          id: '2',
-          name: 'lista de la compra'
-        }
-      ]
+      boardName: ''
     }
   },
+  computed: {
+    ...mapGetters(['getBoard'])
+  },
+  mounted: {
+    getAllBoar: this.$store.dispatch('getAllBoard')
+  },
   methods: {
+    ...mapMutations(['addBoard', 'deleteBoard']),
+    ...mapActions(['getAllBoard']),
     add() {
-      this.boards.push({ name: this.boardName })
+      this.$store.commit('addBoard', this.boardName)
+      this.boardName = ''
+    },
+    deleteBoard(indexBoard) {
+      this.$store.commit('deleteBoard', indexBoard)
     }
   }
 }
 </script>
 <style scoped>
+.containerHome {
+  height: 84vh;
+}
 h3 {
   text-align: left;
   margin: 1.5rem;

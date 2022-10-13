@@ -17,15 +17,7 @@ export default {
     listId: String,
     name: String
   },
-  data() {
-    return {
-      tasksList: [
-        { id: '1', title: 'cagar' },
-        { id: '2', title: 'saltar' },
-        { id: '3', title: 'matar' }
-      ]
-    }
-  }
+  data() {}
 
   // computed: {
   //   ...mapGetters(['getTasksFromList']),

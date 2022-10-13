@@ -1,0 +1,12 @@
+{
+    "todos": [
+        { "id": 1, "title": "segar", "done": true },
+        { "id": 2, "title": "saltar", "done": false },
+        { "id": 3, "title": "maltar", "done": false }
+      ],
+      "boardLists": [
+        { "id": 1, "name": "Todo"},
+        { "id": 2, "name": "Doing"}
+      ],
+      "boards": ["Important", "Task"]
+}

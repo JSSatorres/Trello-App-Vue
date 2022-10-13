@@ -1,6 +1,12 @@
 # trello-app
 
-> trello app clone
+> trello app clone with Vue2
+
+this app have vue-router and Vuex
+
+the app use json-server to simulate an api
+
+to up the server => "json-server --watch db.json"
 
 ## Build Setup
 

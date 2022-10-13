@@ -41,11 +41,7 @@ export default {
   // },
   data() {
     return {
-      listName: '',
-      boardLists: [
-        { id: '1', name: 'Todo' },
-        { id: '2', name: 'Doing' }
-      ]
+      listName: ''
     }
   },
   // computed: {

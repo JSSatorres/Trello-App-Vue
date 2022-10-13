@@ -1,22 +1,28 @@
 <template>
-  <ul>
-    <li
-      v-for="(task, index) in tasks"
-      :key="index"
-      :class="{ completed: task.completed }"
-    >
-      {{ task.title }}
-    </li>
-    <input
-      v-model="title"
-      type="text"
-      placeholder="añade nueva tarea"
-      @keyup.enter="add()"
-    />
-  </ul>
+  <section>
+    <ul>
+      <li
+        v-for="(task, index) in tasks"
+        :key="index"
+        :class="{ completed: task.completed }"
+      >
+        {{ task.title }}
+      </li>
+      <input
+        v-model="title"
+        type="text"
+        placeholder="añade nueva tarea"
+        @keyup.enter="add()"
+      />
+    </ul>
+    <button @click="increment">
+      {{ doneTodosCount }}
+    </button>
+  </section>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'TaskList',
   props: {
@@ -28,10 +34,17 @@ export default {
       title: ''
     }
   },
+  computed: {
+    ...mapGetters(['doneTodosCount'])
+  },
   methods: {
     add() {
       // TODO: añadir emit
       console.log('entra')
+    },
+    increment() {
+      this.$store.commit('increment')
+      console.log(this.$store.state.count)
     }
   }
 }
