@@ -22,6 +22,7 @@
 <script>
 import { mapGetters, mapMutations, mapActions } from 'vuex'
 import BoardCard from '@/components/BoardCard.vue'
+import store from '../store'
 
 export default {
   name: 'home-view',
@@ -35,7 +36,7 @@ export default {
     ...mapGetters(['getBoard'])
   },
   mounted: {
-    getAllBoar: this.$store.dispatch('getAllBoard')
+    getAllBoar: store.dispatch('getAllBoard')
   },
   methods: {
     ...mapMutations(['addBoard', 'deleteBoard']),
