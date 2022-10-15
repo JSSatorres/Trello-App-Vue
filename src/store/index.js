@@ -26,13 +26,6 @@ export default new Vuex.Store({
       return state.boards
     }
   },
-  actions: {
-    getAllBoard: async context => {
-      const data = await fetch('http://localhost:3000/todos')
-      const allBoard = await data.json()
-      context.commit('getAllBoards', allBoard)
-    }
-  },
   mutations: {
     addBoard(state, Board) {
       state.boards.push(Board)
@@ -42,6 +35,13 @@ export default new Vuex.Store({
     },
     getAllBoards(state, allBoard) {
       state.boards = allBoard
+    }
+  },
+  actions: {
+    getAllBoard: async context => {
+      const data = await fetch('http://localhost:3000/todos')
+      const allBoard = await data.json()
+      context.commit('getAllBoards', allBoard)
     }
   }
 })

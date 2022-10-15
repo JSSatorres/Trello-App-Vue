@@ -9,13 +9,18 @@
         @keyup.enter="add()"
       />
       <BoardCard
-        v-for="(board, index) in getBoard"
+        v-for="(board, index) in getAllBoards"
         :key="index"
         :position="index"
         :name="board"
         @handelDeleteBoard="deleteBoard"
       />
     </div>
+    <!-- <ul v-if="getAllBoard !== []"> -->
+    <button @click="getAllBoard">obtener boards</button>
+    <ul v-for="(board, index) of boards" :key="index">
+      <li>{{ board }}</li>
+    </ul>
   </div>
 </template>
 
