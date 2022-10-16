@@ -27,8 +27,8 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    addBoard(state, Board) {
-      state.boards.push(Board)
+    addBoard(state, newBoard) {
+      state.boards.push(newBoard)
     },
     deleteBoard(state, boardIndex) {
       state.boards.splice(boardIndex, 1)
@@ -39,8 +39,10 @@ export default new Vuex.Store({
   },
   actions: {
     getAllBoard: async context => {
+      console.log('entro')
       const data = await fetch('http://localhost:3000/todos')
       const allBoard = await data.json()
+      console.log(context)
       context.commit('getAllBoards', allBoard)
     }
   }

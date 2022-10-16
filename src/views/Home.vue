@@ -9,23 +9,24 @@
         @keyup.enter="add()"
       />
       <BoardCard
-        v-for="(board, index) in getAllBoards"
+        v-for="(board, index) in getBoard"
         :key="index"
         :position="index"
         :name="board"
-        @handelDeleteBoard="deleteBoard"
+        @handelDeleteBoard="deleteBoard()"
       />
     </div>
     <!-- <ul v-if="getAllBoard !== []"> -->
     <button @click="getAllBoard">obtener boards</button>
-    <ul v-for="(board, index) of boards" :key="index">
+    <ul v-for="(board, index) of getBoard" :key="index">
       <li>{{ board }}</li>
     </ul>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapMutations, mapActions } from 'vuex'
+import { mapMutations, mapGetters, mapActions } from 'vuex'
+// import { mapGetters, mapMutations, mapActions, mapState } from 'vuex'
 import BoardCard from '@/components/BoardCard.vue'
 import store from '../store'
 
@@ -39,19 +40,17 @@ export default {
   },
   computed: {
     ...mapGetters(['getBoard'])
-  },
-  mounted: {
-    getAllBoar: store.dispatch('getAllBoard')
+    // ...mapState(['boards'])
   },
   methods: {
     ...mapMutations(['addBoard', 'deleteBoard']),
     ...mapActions(['getAllBoard']),
     add() {
-      this.$store.commit('addBoard', this.boardName)
+      store.commit('addBoard', this.boardName)
       this.boardName = ''
     },
     deleteBoard(indexBoard) {
-      this.$store.commit('deleteBoard', indexBoard)
+      store.commit('deleteBoard', indexBoard)
     }
   }
 }
