@@ -17,20 +17,20 @@ export default {
     listId: String,
     name: String
   },
-  data() {}
+  data() {},
 
-  // computed: {
-  //   ...mapGetters(['getTasksFromList']),
-  //   tasksList() {
-  //     return this.getTasksFromList(this.listId)
-  //   }
-  // },
-  // methods: {
-  //   ...mapActions(['fetchTasks'])
-  // },
-  // created() {
-  //   this.fetchTasks({ list: this.listId })
-  // }
+  computed: {
+    //   ...mapGetters(['getTasksFromList']),
+    //   tasksList() {
+    //     return this.getTasksFromList(this.listId)
+    //   }
+    // },
+    // methods: {
+    //   ...mapActions(['fetchTasks'])
+    // },
+    // created() {
+    //   this.fetchTasks({ list: this.listId })
+  }
 }
 </script>
 
