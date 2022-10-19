@@ -17,7 +17,7 @@
       />
     </div>
     <!-- <ul v-if="getAllBoard !== []"> -->
-    <button @click="getAllBoard">obtener boards</button>
+    <button v-on:click="AllBoard">obtener boards</button>
     <ul v-for="(board, index) of getBoard" :key="index">
       <li>{{ board }}</li>
     </ul>
@@ -28,7 +28,7 @@
 import { mapMutations, mapGetters, mapActions } from 'vuex'
 // import { mapGetters, mapMutations, mapActions, mapState } from 'vuex'
 import BoardCard from '@/components/BoardCard.vue'
-import store from '../store'
+// import store from '../store'
 
 export default {
   name: 'home-view',
@@ -38,19 +38,22 @@ export default {
       boardName: ''
     }
   },
+  created() {
+    this.AllBoard()
+  },
   computed: {
     ...mapGetters(['getBoard'])
     // ...mapState(['boards'])
   },
   methods: {
     ...mapMutations(['addBoard', 'deleteBoard']),
-    ...mapActions(['getAllBoard']),
+    ...mapActions(['AllBoard']),
     add() {
-      store.commit('addBoard', this.boardName)
+      this.$store.commit('addBoard', this.boardName)
       this.boardName = ''
     },
     deleteBoard(indexBoard) {
-      store.commit('deleteBoard', indexBoard)
+      this.$store.commit('deleteBoard', indexBoard)
     }
   }
 }

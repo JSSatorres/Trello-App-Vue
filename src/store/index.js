@@ -22,7 +22,7 @@ export default new Vuex.Store({
     getTodoList(state) {
       return state.todos
     },
-    getBoard(state, allBoard) {
+    getBoard(state) {
       return state.boards
     }
   },
@@ -38,12 +38,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    getAllBoard: async context => {
+    async AllBoard({commit}) {
       console.log('entro')
       const data = await fetch('http://localhost:3000/todos')
       const allBoard = await data.json()
-      console.log(context)
-      context.commit('getAllBoards', allBoard)
+      commit('getAllBoards', allBoard)
     }
   }
 })
