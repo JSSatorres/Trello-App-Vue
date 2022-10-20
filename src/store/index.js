@@ -38,9 +38,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async AllBoard({commit}) {
+    async AllBoard({ commit }) {
       console.log('entro')
-      const data = await fetch('http://localhost:3000/todos')
+      const data = await fetch('http://localhost:3000/boards')
       const allBoard = await data.json()
       commit('getAllBoards', allBoard)
     }

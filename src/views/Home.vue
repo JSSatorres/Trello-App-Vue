@@ -16,11 +16,6 @@
         @handelDeleteBoard="deleteBoard()"
       />
     </div>
-    <!-- <ul v-if="getAllBoard !== []"> -->
-    <button v-on:click="AllBoard">obtener boards</button>
-    <ul v-for="(board, index) of getBoard" :key="index">
-      <li>{{ board }}</li>
-    </ul>
   </div>
 </template>
 
