@@ -1,4 +1,5 @@
 <template>
+  <!-- // TODO: look for parametres -->
   <div class="container">
     <router-link class="board-card" :to="{ name: 'board', params: { name } }">
       <span class="board-card-title">❏ {{ name }}</span>
