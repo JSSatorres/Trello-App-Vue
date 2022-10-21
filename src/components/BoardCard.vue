@@ -20,6 +20,10 @@ export default {
     handleDelete() {
       this.$emit('handelDeleteBoard', this.position)
       console.log(this.position)
+    },
+    handleDeleteAll() {
+      this.$emit('handelDeleteBoard', this.position)
+      console.log(this.position)
     }
   }
 }
