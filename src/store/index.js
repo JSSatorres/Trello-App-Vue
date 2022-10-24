@@ -35,6 +35,9 @@ export default new Vuex.Store({
     },
     getAllBoards(state, allBoard) {
       state.boards = allBoard
+    },
+    allTasks(state, allTodos) {
+      state.todos = allTodos
     }
   },
   actions: {
@@ -43,6 +46,11 @@ export default new Vuex.Store({
       const data = await fetch('http://localhost:3000/boards')
       const allBoard = await data.json()
       commit('getAllBoards', allBoard)
+    },
+    async getTasksFromList({ commit }) {
+      const data = await fetch('http://localhost:3000/todos')
+      const allTodos = await data.json()
+      commit('allTasks', allTodos)
     }
   }
 })

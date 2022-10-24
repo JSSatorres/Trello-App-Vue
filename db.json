@@ -1,12 +1,13 @@
 {
     "todos": [
-        { "id": 1, "title": "segar", "done": true },
-        { "id": 2, "title": "saltar", "done": false },
-        { "id": 3, "title": "maltar", "done": false }
+        { "id": 1, "board":"Important", "title": "segar", "done": true },
+        { "id": 2, "board":"Important", "title": "saltar", "done": false },
+        { "id": 3, "board":"Task", "title": "maltar", "done": false }
       ],
       "boardLists": [
         { "id": 1, "name": "Todo"},
-        { "id": 2, "name": "Doing"}
+        { "id": 2, "name": "Doing"},
+        { "id": 3, "name": "Done"}
       ],
       "boards": ["Important", "Task"]
 }

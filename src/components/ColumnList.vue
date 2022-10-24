@@ -3,12 +3,12 @@
     <header>
       <h3>{{ name }}</h3>
     </header>
-    <TaskList :listId="listId" :tasks="tasksList" />
+    <TaskList :listId="listId" :tasks="allTasks" />
   </section>
 </template>
 
 <script>
-// import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import TaskList from '@/components/TaskList'
 export default {
   name: 'ColumnList',
@@ -18,19 +18,22 @@ export default {
     name: String
   },
   data() {},
-
-  computed: {
-    //   ...mapGetters(['getTasksFromList']),
-    //   tasksList() {
-    //     return this.getTasksFromList(this.listId)
-    //   }
-    // },
-    // methods: {
-    //   ...mapActions(['fetchTasks'])
-    // },
-    // created() {
-    //   this.fetchTasks({ list: this.listId })
+  created() {
+    this.getTasksFromList()
+  },
+  // computed: {
+  //   ...mapGetters(['getTasksFromList', 'allTasks']),
+  //   tasksList() {
+  //     return this.getTasksFromList(this.listId)
+  //   }
+  // },
+  methods: {
+    ...mapGetters(['getTasksFromList']),
+    ...mapActions(['fetchTasks'])
   }
+  // created() {
+  //   this.fetchTasks({ list: this.listId })
+  // }
 }
 </script>
 
