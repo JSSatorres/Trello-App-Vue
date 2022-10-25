@@ -21,12 +21,12 @@ export default {
   created() {
     this.getTasksFromList()
   },
-  // computed: {
-  //   ...mapGetters(['getTasksFromList', 'allTasks']),
-  //   tasksList() {
-  //     return this.getTasksFromList(this.listId)
-  //   }
-  // },
+  computed: {
+    ...mapGetters(['getTasksFromList', 'allTasks']),
+    tasksList() {
+      return this.getTasksFromList(this.listId)
+    }
+  },
   methods: {
     ...mapGetters(['getTasksFromList']),
     ...mapActions(['fetchTasks'])
