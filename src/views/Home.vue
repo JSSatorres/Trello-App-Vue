@@ -23,7 +23,7 @@
 import { mapMutations, mapGetters, mapActions } from 'vuex'
 // import { mapGetters, mapMutations, mapActions, mapState } from 'vuex'
 import BoardCard from '@/components/BoardCard.vue'
-// import store from '../store'
+import store from '../store'
 
 export default {
   name: 'home-view',
@@ -44,11 +44,11 @@ export default {
     ...mapMutations(['addBoard', 'deleteBoard']),
     ...mapActions(['AllBoard']),
     add() {
-      this.$store.commit('addBoard', this.boardName)
+      store.commit('addBoard', this.boardName)
       this.boardName = ''
     },
     deleteBoard(indexBoard) {
-      this.$store.commit('deleteBoard', indexBoard)
+      store.commit('deleteBoard', indexBoard)
     }
   }
 }
