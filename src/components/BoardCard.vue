@@ -1,7 +1,10 @@
 <template>
   <!-- // TODO: look for parametres -->
   <div class="container">
-    <router-link class="board-card" :to="{ name: 'board', params: { name } }">
+    <router-link
+      class="board-card"
+      :to="{ name: 'board', params: { name, id } }"
+    >
       <span class="board-card-title">❏ {{ name }}</span>
     </router-link>
     <button @click="handleDelete">X</button>

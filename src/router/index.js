@@ -17,9 +17,9 @@ export default new Router({
       path: '/board/:id',
       name: 'board',
       component: Board,
+      props: true
       // props true allow to catch props in routerlink
       // in BoardCards.vue =>  <router-link class="board-card" :to="{ name: 'board', params: { name, id } }">
-      props: true
     }
   ]
 })
