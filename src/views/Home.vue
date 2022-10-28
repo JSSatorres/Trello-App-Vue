@@ -11,9 +11,10 @@
       <BoardCard
         v-for="(board, index) in getBoard"
         :key="index"
-        :position="index"
-        :name="board"
+        :name="board.name"
         @handelDeleteBoard="deleteBoard()"
+        :id="board.id"
+        :position="index"
       />
     </div>
   </div>
