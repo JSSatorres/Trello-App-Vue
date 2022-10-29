@@ -2,7 +2,9 @@
   <header>
     <span class="title">Vue Trello</span>
     <router-link class="btn-header" to="/">My Boards</router-link>
+    <h4> delete</h4>
   </header>
+  <!-- //TODO: delete  -->
 </template>
 
 <script>
