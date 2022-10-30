@@ -32,9 +32,12 @@ a {
   margin: 0px 0 0 12px;
   text-decoration: none;
   font-size: 20px;
-  color: rgb(42, 167, 48);
+  color: rgb(99, 202, 104);
 }
 a:hover {
   color: rgb(214, 169, 22);
+}
+a:focus {
+  color: rgb(44, 214, 22);
 }
 </style>
