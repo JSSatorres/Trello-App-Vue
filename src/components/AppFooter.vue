@@ -21,11 +21,17 @@ footer {
   width: 100%;
   color: rgb(160, 204, 204);
 }
+
 a {
+  margin: 0px 0 0 12px;
   text-decoration: none;
   color: aliceblue;
+  font-size: 20px;
 }
 a:hover {
   color: rgb(214, 169, 22);
+}
+a:focus {
+  color: rgb(44, 214, 22);
 }
 </style>
