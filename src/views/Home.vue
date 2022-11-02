@@ -87,4 +87,22 @@ input:active {
 input::placeholder {
   color: white;
 }
+button {
+  box-sizing: border-box;
+  background-color: #546e7a;
+  border: 2px solid #546e7a;
+  border-radius: 3px;
+  font-size: 1.1rem;
+  outline: 0;
+  padding: 0.5rem;
+  transition: all 600ms ease;
+}
+button:focus,
+button:active {
+  background-color: white;
+  color: #546e7a;
+}
+button::placeholder {
+  color: white;
+}
 </style>
