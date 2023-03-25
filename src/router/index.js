@@ -18,16 +18,12 @@ export default new Router({
       name: 'board',
       component: Board,
       props: true
-      // props true allow to catch props in routerlink
-      // in BoardCards.vue =>  <router-link class="board-card" :to="{ name: 'board', params: { name, id } }">
     },
     {
       path: '/card/:id',
       name: 'board',
       component: Board,
       props: true
-      // props true allow to catch props in routerlink
-      // in BoardCards.vue =>  <router-link class="board-card" :to="{ name: 'board', params: { name, id } }">
     }
   ]
 })
