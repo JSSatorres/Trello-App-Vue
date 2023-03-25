@@ -56,7 +56,7 @@ export default {
 </script>
 <style scoped>
 .containerHome {
-  height: 84vh;
+  height: 76vh;
 }
 h3 {
   text-align: left;
