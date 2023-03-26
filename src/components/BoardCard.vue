@@ -2,9 +2,10 @@
   <!-- // TODO: look for parametres -->
   <div class="container">
     <router-link
-      class="board-card"
-      :to="{ name: 'board', params: { name, id } }"
+    class="board-card"
+    :to="{ name: 'board', params: { name, id } }"
     >
+      <h2> boad trello</h2>
       <span class="board-card-title">❏ {{ name }}</span>
     </router-link>
     <button @click="handleDelete">X</button>
