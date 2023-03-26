@@ -8,6 +8,12 @@
       v-model="listName"
       @keyup.enter="add()"
     />
+    <input
+      type="text"
+      placeholder="Add a list..."
+      v-model="listName"
+      @keyup.enter="add()"
+    />
     <!-- <template v-if="fetchingData">
       <span>Loading...</span>
     </template> -->
