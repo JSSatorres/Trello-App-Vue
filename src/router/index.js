@@ -18,12 +18,6 @@ export default new Router({
       name: 'board',
       component: Board,
       props: true
-    },
-    {
-      path: '/card/:id',
-      name: 'board',
-      component: Board,
-      props: true
     }
   ]
 })
