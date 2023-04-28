@@ -37,9 +37,11 @@ export default {
   created() {
     this.AllBoard()
   },
+  created1() {
+    this.AllBoard()
+  },
   computed: {
     ...mapGetters(['getBoard'])
-    // ...mapState(['boards'])
   },
   methods: {
     ...mapMutations(['addBoard', 'deleteBoard']),
